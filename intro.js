@@ -9,9 +9,10 @@ var fibNum = 0;
 
 var addFib = function(){
     var newElement = document.createElement("li");
+    newElement.setAttribute("class", "fib");
     newElement.innerHTML = fibonacci(fibNum);
-    fibNum ++;
     list2.appendChild(newElement);
+    fibNum++;
 };
 
 var buttonCallback = function(e) {
@@ -38,7 +39,9 @@ var fibonacci = function(n) {
 	return 1;
     }
     else{
-	return fibonacci(n-1) + fibonacci(n-2);
+	var fibNums = document.getElementsByClassName("fib");
+	var n = fibNums.length;
+	return Number(fibNums[n-1].innerHTML) + Number(fibNums[n-2].innerHTML);
     }
 };
 
